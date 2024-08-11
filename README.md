@@ -28,6 +28,12 @@ Hey, Netology
 - Соберите и отправьте созданный образ в свой dockerhub-репозитории c tag 1.0.0 (ТОЛЬКО ЕСЛИ ЕСТЬ ДОСТУП). 
 - Предоставьте ответ в виде ссылки на https://hub.docker.com/<username_repo>/custom-nginx/general .
 
+### Решение 
+
+"https://hub.docker.com/repository/docker/smabramov/custom-nginx/general"
+
+![docker1]()
+
 ## Задача 2
 1. Запустите ваш образ custom-nginx:1.0.0 командой docker run в соответвии с требованиями:
 - имя контейнера "ФИО-custom-nginx-t2"
@@ -38,6 +44,15 @@ Hey, Netology
 4. Убедитесь с помощью curl или веб браузера, что индекс-страница доступна.
 
 В качестве ответа приложите скриншоты консоли, где видно все введенные команды и их вывод.
+
+### Решение 
+
+![docker2]()
+
+![docker3]()
+
+![docker4]()
+
 
 
 ## Задача 3
@@ -56,6 +71,24 @@ Hey, Netology
 
 В качестве ответа приложите скриншоты консоли, где видно все введенные команды и их вывод.
 
+### Решение 
+
+![docker5]()
+
+На вход контейнера был послан сигнал ctrl-c, поэтому завершил работу.
+
+![docker6]()
+
+![docker7]()
+
+![docker8]()
+
+Внутри контейнера мы перенастроили NGINX слушать не порт 80 а слушать теперь порт 81. А в настройках докер осталось что докер пересылает со внешнего порта 8080 на порт контейнера 80 - а там никто не слушает этот порт. Поэтому нет ответа.
+
+![docker9]()
+
+
+
 ## Задача 4
 
 
@@ -67,6 +100,10 @@ Hey, Netology
 
 
 В качестве ответа приложите скриншоты консоли, где видно все введенные команды и их вывод.
+
+### Решение 
+
+![docker9]()
 
 
 ## Задача 5
@@ -118,6 +155,47 @@ services:
 
 В качестве ответа приложите скриншоты консоли, где видно все введенные команды и их вывод, файл compose.yaml , скриншот portainer c задеплоенным компоузом.
 
+### Решение
+
+![docker10]()
+
+отработал только файл compose.yaml . Причина - потому что это имя файла докер обрабатывает в приоритете - by designe.
+
+Созданный docker.yaml c include
+
+```
+version: "3"
+include:
+  - docker-compose.yaml
+services:
+  portainer:
+    image: portainer/portainer-ce:latest
+    network_mode: host
+    ports:
+      - "9000:9000"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock"
+```
+
+ ![docker11]()
+
+ ![docker12]()
+
+ ![docker13]()
+
+ ![docker14]()
+
+ ![docker15]()
+
+ ![docker16]()
+
+ ![docker17]()
+
+ - WARN[0000] /root/task5/docker-compose.yaml: version is obsolete - означает предупреждение, что версия устарела (видимо самого файла, т.к. содержимое файла не соотвествует запущенным сервисам).
+
+- WARN[0000] Found orphan containers ([task5-portainer-1]) for this project. If you removed or renamed this service in   your compose file, you can run this command with the --remove-orphans flag to clean it up.- означает предупреждение, что найдены контейнеры, которые не описаны в файле. для очистки их выполнить с флагом --remove-orphans :
+
+![docker18]()
 ---
 
 ### Правила приема
