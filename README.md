@@ -32,7 +32,7 @@ Hey, Netology
 
 "https://hub.docker.com/repository/docker/smabramov/custom-nginx/general"
 
-![docker1]()
+![docker1](https://github.com/smabramov/Docker-Compose/blob/26813924d6ce908f3d2c22d36cbcb10fa5ed5745/image/docker1.jpg)
 
 ## Задача 2
 1. Запустите ваш образ custom-nginx:1.0.0 командой docker run в соответвии с требованиями:
@@ -47,11 +47,11 @@ Hey, Netology
 
 ### Решение 
 
-![docker2]()
+![docker2](https://github.com/smabramov/Docker-Compose/blob/26813924d6ce908f3d2c22d36cbcb10fa5ed5745/image/docker2.jpg)
 
-![docker3]()
+![docker3](https://github.com/smabramov/Docker-Compose/blob/26813924d6ce908f3d2c22d36cbcb10fa5ed5745/image/docker3.jpg)
 
-![docker4]()
+![docker4](https://github.com/smabramov/Docker-Compose/blob/26813924d6ce908f3d2c22d36cbcb10fa5ed5745/image/docker4.jpg)
 
 
 
@@ -73,19 +73,19 @@ Hey, Netology
 
 ### Решение 
 
-![docker5]()
+![docker5](https://github.com/smabramov/Docker-Compose/blob/26813924d6ce908f3d2c22d36cbcb10fa5ed5745/image/docker5.jpg)
 
 На вход контейнера был послан сигнал ctrl-c, поэтому завершил работу.
 
-![docker6]()
+![docker6](https://github.com/smabramov/Docker-Compose/blob/26813924d6ce908f3d2c22d36cbcb10fa5ed5745/image/docker6.jpg)
 
-![docker7]()
+![docker7](https://github.com/smabramov/Docker-Compose/blob/26813924d6ce908f3d2c22d36cbcb10fa5ed5745/image/docker7.jpg)
 
-![docker8]()
+![docker8](https://github.com/smabramov/Docker-Compose/blob/26813924d6ce908f3d2c22d36cbcb10fa5ed5745/image/docker8.jpg)
 
 Внутри контейнера мы перенастроили NGINX слушать не порт 80 а слушать теперь порт 81. А в настройках докер осталось что докер пересылает со внешнего порта 8080 на порт контейнера 80 - а там никто не слушает этот порт. Поэтому нет ответа.
 
-![docker9]()
+![docker9](https://github.com/smabramov/Docker-Compose/blob/26813924d6ce908f3d2c22d36cbcb10fa5ed5745/image/docker9.jpg)
 
 
 
@@ -103,7 +103,7 @@ Hey, Netology
 
 ### Решение 
 
-![docker9]()
+![docker10](https://github.com/smabramov/Docker-Compose/blob/26813924d6ce908f3d2c22d36cbcb10fa5ed5745/image/docker10.jpg)
 
 
 ## Задача 5
@@ -157,7 +157,7 @@ services:
 
 ### Решение
 
-![docker10]()
+![docker11](https://github.com/smabramov/Docker-Compose/blob/26813924d6ce908f3d2c22d36cbcb10fa5ed5745/image/docker11.jpg)
 
 отработал только файл compose.yaml . Причина - потому что это имя файла докер обрабатывает в приоритете - by designe.
 
@@ -177,25 +177,23 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock"
 ```
 
- ![docker11]()
+ ![docker12](https://github.com/smabramov/Docker-Compose/blob/26813924d6ce908f3d2c22d36cbcb10fa5ed5745/image/docker12.jpg)
 
- ![docker12]()
+ ![docker13](https://github.com/smabramov/Docker-Compose/blob/26813924d6ce908f3d2c22d36cbcb10fa5ed5745/image/docker13.jpg)
 
- ![docker13]()
+ ![docker14](https://github.com/smabramov/Docker-Compose/blob/26813924d6ce908f3d2c22d36cbcb10fa5ed5745/image/docker14.jpg)
 
- ![docker14]()
+ ![docker15](https://github.com/smabramov/Docker-Compose/blob/26813924d6ce908f3d2c22d36cbcb10fa5ed5745/image/docker15.jpg)
 
- ![docker15]()
+ ![docker16](https://github.com/smabramov/Docker-Compose/blob/26813924d6ce908f3d2c22d36cbcb10fa5ed5745/image/docker16.jpg)
 
- ![docker16]()
-
- ![docker17]()
+ ![docker17](https://github.com/smabramov/Docker-Compose/blob/26813924d6ce908f3d2c22d36cbcb10fa5ed5745/image/docker17.jpg)
 
  - WARN[0000] /root/task5/docker-compose.yaml: version is obsolete - означает предупреждение, что версия устарела (видимо самого файла, т.к. содержимое файла не соотвествует запущенным сервисам).
 
 - WARN[0000] Found orphan containers ([task5-portainer-1]) for this project. If you removed or renamed this service in   your compose file, you can run this command with the --remove-orphans flag to clean it up.- означает предупреждение, что найдены контейнеры, которые не описаны в файле. для очистки их выполнить с флагом --remove-orphans :
 
-![docker18]()
+![docker18](https://github.com/smabramov/Docker-Compose/blob/26813924d6ce908f3d2c22d36cbcb10fa5ed5745/image/docker18.jpg)
 ---
 
 ### Правила приема
